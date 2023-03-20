@@ -39,7 +39,6 @@ public class Client {
     private HttpHeaders makeHeaders() {
         HttpHeaders headers = new HttpHeaders();
 
-//        headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.add("Authorization", properties.getKakaoAuthKey());

@@ -10,6 +10,4 @@ public class SearchReq {
     private int page;
     private int size;
 
-
-//    public SearchReq(String query, String sort, int page, int size) {
 }

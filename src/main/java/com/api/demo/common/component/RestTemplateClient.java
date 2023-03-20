@@ -33,36 +33,11 @@ public class RestTemplateClient {
         simpleClientHttpRequestFactory.setReadTimeout(READ_TIMEOUT);
         restTemplate.setRequestFactory(new BufferingClientHttpRequestFactory(simpleClientHttpRequestFactory));
 
-        // MessageConverters
-//        restTemplate.setMessageConverters(messageConverters());
-
         // Error handler
         restTemplate.setErrorHandler(new ErrorHandler());
 
         return restTemplate;
     }
 
-//    private List<HttpMessageConverter<?>> messageConverters() {
-//
-//        StringHttpMessageConverter stringMessageConverter = new StringHttpMessageConverter();
-//        stringMessageConverter.setWriteAcceptCharset(false);
-//
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-//        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-//        objectMapper.configure(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES, false);
-//        objectMapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
-//        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-//
-//        MappingJackson2HttpMessageConverter jsonMessageConverter = new MappingJackson2HttpMessageConverter();
-//        jsonMessageConverter.setPrettyPrint(true);
-//        jsonMessageConverter.setObjectMapper(objectMapper);
-//
-//        List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
-//        messageConverters.add(stringMessageConverter);
-//        messageConverters.add(jsonMessageConverter);
-//
-//        return messageConverters;
-//    }
 
 }

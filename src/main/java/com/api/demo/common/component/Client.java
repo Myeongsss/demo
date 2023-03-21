@@ -1,9 +1,7 @@
 package com.api.demo.common.component;
 
 import com.api.demo.common.properties.CoreProperties;
-import com.api.demo.search.vo.SearchRes;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.*;

@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,6 +29,15 @@ public class SearchService {
 
     @Autowired
     private SearchRepository repository;
+
+    public void validateReq(SearchReq req) throws Exception{
+        if (StringUtils.isEmpty(req.getQuery())) {
+            throw new Exception("empty search parameter : query");
+        }
+        if( (req.getPage()) > 50 ){
+            throw new Exception("page is more than max : 1-50");
+        }
+    }
 
     public SearchRes search(SearchReq req) {
 
